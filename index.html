@@ -16,7 +16,7 @@
                     <div class="form-group">
                          
                         <div class="input-group input-group-lg">
-                            <input type="text" class="form-control" ng-model="todoInput" placeholder="Add new..">
+                            <input type="text" class="form-control" ng-model="todoInput" placeholder="What needs to be done?">
                             <span class="input-group-btn">
                                 <button class="btn btn-secondary" type="submit">ADD</button>
                             </span>
@@ -30,19 +30,18 @@
                 <div class="list-group">
                     <div class="list-group-item active">
                         <div class="row">
-                            <div class="col-md-8 col-sm-7 col-xs-5">
+                            <div class="col-md-8 col-sm-8 col-xs-8">
                                 <h3>Todo list</h3>
                             </div>
-                            <div class="col-md-4 col-sm-5 col-xs-7">
+                            <div class="col-md-4 col-sm-4 col-xs-4">
                                 <div class="row" style="margin-top: 10px">
-                                    <div class="col-md-6 col-sm-6 col-xs-6"><button class="btn btn-danger" ng-click="removeMaked()">Remove marked</button></div>
-                                    <div class="col-md-6 col-sm-6 col-xs-6" style="margin-top: 10px">
-                                        <select class="custom-select" ng-model="filterTodo" style="color: black">
+                                    <button class="btn btn-danger btn-xs" ng-click="removeMaked()" style="float: right; margin-right: 10px; margin-top: 5px">Remove marked</button>                                    
+                                        <select ng-model="filterTodo" style="color: black; float: right; margin-right: 10px; margin-top: 5px">
                                             <option value="">All</option>
                                             <option value="true">Marked</option>
                                             <option value="false">Unmarked</option>
                                         </select>
-                                    </div>
+                                    
                                 </div>
                             </div>
                         </div>
@@ -66,7 +65,7 @@
                                 </div>
                                 
                                 <div class="col-md-2 col-sm-2 col-xs-3">
-                                    <button type="button" class="btn btn-danger" ng-click="remove(x.id)">remove</button>
+                                    <button type="button" class="btn btn-danger btn-xs" ng-click="remove(x.id)" style="float: right; margin-right: 15px">remove</button>
                                 </div>
                             </div>
                         </div>
