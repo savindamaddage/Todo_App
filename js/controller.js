@@ -1,11 +1,13 @@
 var app = angular.module('myApp', []); 
 app.controller('todoCtrl', function($scope) {
     $scope.todoList = [];
-
+    var i = 0;
     //get array from local storage
-    $scope.todoList = JSON.parse(localStorage.getItem("todo_list"));
-
-    var i = $scope.todoList[$scope.todoList.length-1].idNo;
+    //check whether loacl storage is available
+    if(JSON.parse(localStorage.getItem("todo_list")) && JSON.parse(localStorage.getItem("todo_list")).length>0){
+        $scope.todoList = JSON.parse(localStorage.getItem("todo_list"));
+        i = $scope.todoList[$scope.todoList.length-1].idNo;
+    }
 
     //add item
     $scope.todoAdd = function() {
