@@ -12,17 +12,18 @@
     <div class="col-md-10">
         <div class="row">
             <div class="col-md-12">
+
                 <form role="form" ng-submit="todoAdd()">
                     <div class="form-group">
-                         
                         <div class="input-group input-group-lg">
-                            <input type="text" class="form-control" ng-model="todoInput" placeholder="What needs to be done?">
+                            <input type="text" class="form-control" ng-model="todoInput" placeholder="What needs to be done?" required="">
                             <span class="input-group-btn">
-                                <button class="btn btn-secondary" type="submit">ADD</button>
+                                <button class="btn btn-primary" type="submit">ADD</button>
                             </span>
                         </div>
                     </div>
                 </form>
+                
             </div>
         </div>
         <div class="row">
@@ -41,7 +42,6 @@
                                             <option value="true">Marked</option>
                                             <option value="false">Unmarked</option>
                                         </select>
-                                    
                                 </div>
                             </div>
                         </div>
