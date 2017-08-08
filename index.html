@@ -5,18 +5,18 @@
 <link rel="stylesheet" href="css/styles.css">
 
 
-<body>
+<body ng-app="myApp" ng-controller="todoCtrl">
 
     <div class="container-fluid" style="margin-top: 40px;">
     <div class="col-md-1"></div>
     <div class="col-md-10">
         <div class="row">
             <div class="col-md-12">
-                <form role="form">
+                <form role="form" ng-submit="todoAdd()">
                     <div class="form-group">
                          
                         <div class="input-group input-group-lg">
-                            <input type="text" class="form-control" placeholder="Add new..">
+                            <input type="text" class="form-control" ng-model="todoInput" placeholder="Add new..">
                             <span class="input-group-btn">
                                 <button class="btn btn-secondary" type="submit">ADD</button>
                             </span>
@@ -35,9 +35,9 @@
                             </div>
                             <div class="col-md-4 col-sm-5 col-xs-7">
                                 <div class="row" style="margin-top: 10px">
-                                    <div class="col-md-6 col-sm-6 col-xs-6"><button class="btn btn-danger">Remove marked</button></div>
+                                    <div class="col-md-6 col-sm-6 col-xs-6"><button class="btn btn-danger" ng-click="removeMaked()">Remove marked</button></div>
                                     <div class="col-md-6 col-sm-6 col-xs-6" style="margin-top: 10px">
-                                        <select class="custom-select" style="color: black">
+                                        <select class="custom-select" ng-model="filterTodo" style="color: black">
                                             <option value="">All</option>
                                             <option value="true">Marked</option>
                                             <option value="false">Unmarked</option>
@@ -47,14 +47,14 @@
                             </div>
                         </div>
                     </div>
-                    <div >
+                    <div ng-repeat="x in todoList | filter : {done : filterTodo}">
                         <div class="list-group-item">
                             <div class="row" style="margin-top: 10px">
                                 <div class="col-md-1 col-sm-1 col-xs-2">
                                     <div class="[ form-group ]">
-                                    <input type="checkbox" name="fancy-checkbox-default" autocomplete="off" />
+                                    <input type="checkbox" name="fancy-checkbox-default" id="{{ x.id }}" autocomplete="off" ng-model="x.done" />
                                     <div class="[ btn-group ]">
-                                        <label class="[ btn btn-default ] ">
+                                        <label for="{{ x.id }}" class="[ btn btn-default ] ">
                                             <span class="[ glyphicon glyphicon-ok ]"></span>
                                             <span> </span>
                                         </label>
@@ -62,16 +62,20 @@
                                     </div>
                                 </div>
                                 <div class="col-md-9 col-sm-9 col-xs-7">
-                                    <h4> List item </h4>
+                                    <h4 ng-bind="x.todoText"></h4>
                                 </div>
                                 
                                 <div class="col-md-2 col-sm-2 col-xs-3">
-                                    <button type="button" class="btn btn-danger">remove</button>
+                                    <button type="button" class="btn btn-danger" ng-click="remove(x.id)">remove</button>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    
+                    <div ng-if="todoList.length==0">
+                        <div class="list-group-item">
+                        <h4>Empty</h4>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>  
@@ -85,6 +89,9 @@
 
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<!-- controller -->
+<script src="js/controller.js"></script>
 
 </body>
 </html>
