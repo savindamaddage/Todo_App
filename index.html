@@ -7,7 +7,77 @@
 
 <body>
 
-   
+    <div class="container-fluid" style="margin-top: 40px;">
+    <div class="col-md-1"></div>
+    <div class="col-md-10">
+        <div class="row">
+            <div class="col-md-12">
+                <form role="form">
+                    <div class="form-group">
+                         
+                        <div class="input-group input-group-lg">
+                            <input type="text" class="form-control" placeholder="Add new..">
+                            <span class="input-group-btn">
+                                <button class="btn btn-secondary" type="submit">ADD</button>
+                            </span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="list-group">
+                    <div class="list-group-item active">
+                        <div class="row">
+                            <div class="col-md-8 col-sm-7 col-xs-5">
+                                <h3>Todo list</h3>
+                            </div>
+                            <div class="col-md-4 col-sm-5 col-xs-7">
+                                <div class="row" style="margin-top: 10px">
+                                    <div class="col-md-6 col-sm-6 col-xs-6"><button class="btn btn-danger">Remove marked</button></div>
+                                    <div class="col-md-6 col-sm-6 col-xs-6" style="margin-top: 10px">
+                                        <select class="custom-select" style="color: black">
+                                            <option value="">All</option>
+                                            <option value="true">Marked</option>
+                                            <option value="false">Unmarked</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div >
+                        <div class="list-group-item">
+                            <div class="row" style="margin-top: 10px">
+                                <div class="col-md-1 col-sm-1 col-xs-2">
+                                    <div class="[ form-group ]">
+                                    <input type="checkbox" name="fancy-checkbox-default" autocomplete="off" />
+                                    <div class="[ btn-group ]">
+                                        <label class="[ btn btn-default ] ">
+                                            <span class="[ glyphicon glyphicon-ok ]"></span>
+                                            <span> </span>
+                                        </label>
+                                    </div>  
+                                    </div>
+                                </div>
+                                <div class="col-md-9 col-sm-9 col-xs-7">
+                                    <h4> List item </h4>
+                                </div>
+                                
+                                <div class="col-md-2 col-sm-2 col-xs-3">
+                                    <button type="button" class="btn btn-danger">remove</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>  
+    </div>
+    <div class="col-md-1    "></div>
+</div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
 <!-- jQuery library -->
