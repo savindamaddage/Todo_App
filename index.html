@@ -7,87 +7,81 @@
 
 <body ng-app="myApp" ng-controller="todoCtrl">
 
-    <div class="container-fluid" style="margin-top: 40px;">
-    <div class="col-md-1"></div>
-    <div class="col-md-10">
-        <div class="row">
-            <div class="col-md-12">
+    <div class="container-fluid content">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+            <div class="row">
+                <div class="col-md-12">
 
-                <form role="form" ng-submit="todoAdd()">
-                    <div class="form-group">
-                        <div class="input-group input-group-lg">
-                            <input type="text" class="form-control" ng-model="todoInput" placeholder="What needs to be done?" required="">
-                            <span class="input-group-btn">
-                                <button class="btn btn-primary" type="submit">ADD</button>
-                            </span>
-                        </div>
-                    </div>
-                </form>
-                
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-                <div class="list-group">
-                    <div class="list-group-item active">
-                        <div class="row">
-                            <div class="col-md-8 col-sm-8 col-xs-8">
-                                <h3>Todo list</h3>
+                    <form role="form" ng-submit="todoAdd()">
+                        <div class="form-group">
+                            <div class="input-group input-group-lg">
+                                <input type="text" class="form-control" ng-model="todoInput" placeholder="What needs to be done?" required="">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-primary" type="submit">ADD</button>
+                                </span>
                             </div>
-                            <div class="col-md-4 col-sm-4 col-xs-4">
-                                <div class="row" style="margin-top: 10px">
-                                    <button class="btn btn-danger btn-xs" ng-click="removeMaked()" style="float: right; margin-right: 10px; margin-top: 5px">Remove marked</button>                                    
-                                        <select ng-model="filterTodo" style="color: black; float: right; margin-right: 10px; margin-top: 5px">
+                        </div>
+                    </form>
+                    
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="list-group">
+                        <div class="list-group-item active">
+                            <div class="row">
+                                <div class="col-md-8 col-sm-8 col-xs-8">
+                                    <h3>Todo list</h3>
+                                </div>
+                                <div class="col-md-4 col-sm-4 col-xs-4">
+                                    <div class="row row-nw">
+                                        <button class="btn btn-danger btn-xs right-align" ng-click="removeMaked()">Remove marked</button>                                    
+                                        <select ng-model="filterTodo" class="right-align font-color">
                                             <option value="">All</option>
                                             <option value="true">Marked</option>
                                             <option value="false">Unmarked</option>
                                         </select>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div ng-repeat="x in todoList | filter : {done : filterTodo}">
-                        <div class="list-group-item">
-                            <div class="row" style="margin-top: 10px">
-                                <div class="col-md-1 col-sm-1 col-xs-2">
-                                    <div class="[ form-group ]">
-                                    <input type="checkbox" name="fancy-checkbox-default" id="{{ x.id }}" autocomplete="off" ng-model="x.done" ng-click="mark()"/>
-                                    <div class="[ btn-group ]">
-                                        <label for="{{ x.id }}" class="[ btn btn-default ] ">
-                                            <span class="[ glyphicon glyphicon-ok ]"></span>
-                                            <span> </span>
-                                        </label>
-                                    </div>  
                                     </div>
                                 </div>
-                                <div class="col-md-9 col-sm-9 col-xs-7">
-                                    <h4 ng-bind="x.todoText"></h4>
-                                </div>
-                                
-                                <div class="col-md-2 col-sm-2 col-xs-3">
-                                    <button type="button" class="btn btn-danger btn-xs" ng-click="remove(x.id)" style="float: right; margin-right: 15px">remove</button>
+                            </div>
+                        </div>
+                        <div ng-repeat="x in todoList | filter : {done : filterTodo}">
+                            <div class="list-group-item">
+                                <div class="row row-nw">
+                                    <div class="col-md-1 col-sm-1 col-xs-2">
+                                        <div class="[ form-group ]">
+                                            <input type="checkbox" name="fancy-checkbox-default" id="{{ x.id }}" autocomplete="off" ng-model="x.done" ng-click="mark()"/>
+                                            <div class="[ btn-group ]">
+                                                <label for="{{ x.id }}" class="[ btn btn-default ] ">
+                                                    <span class="[ glyphicon glyphicon-ok ]"></span><span> </span>
+                                                </label>
+                                            </div>  
+                                        </div>
+                                    </div>
+                                    <div class="col-md-9 col-sm-9 col-xs-7">
+                                        <h4 ng-bind="x.todoText"></h4>
+                                    </div>
+                                    <div class="col-md-2 col-sm-2 col-xs-3">
+                                        <button type="button" class="btn btn-danger btn-xs right-align" ng-click="remove(x.id)">remove</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div ng-if="todoList.length==0">
-                        <div class="list-group-item">
-                        <h4>Empty</h4>
+                        <div ng-if="todoList.length==0">
+                            <div class="list-group-item">
+                                <h4>Empty</h4>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>  
+            </div>  
+        </div>
+        <div class="col-md-1"></div>
     </div>
-    <div class="col-md-1    "></div>
-</div>
 
+<!-- angularjs 1.6.4 -->
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
-<!-- jQuery library -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-<!-- Latest compiled JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 <!-- controller -->
 <script src="js/controller.js"></script>
