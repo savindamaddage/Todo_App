@@ -1,0 +1,23 @@
+{
+  "name": "todo_app",
+  "version": "1.0.0",
+  "description": "Todo app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "lite-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/savindamaddage/Todo_App.git"
+  },
+  "author": "Savinda Maddage",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/savindamaddage/Todo_App/issues"
+  },
+  "homepage": "https://github.com/savindamaddage/Todo_App#readme",
+  "devDependencies": {
+    "lite-server": "^2.3.0"
+  }
+}
