@@ -1,11 +1,11 @@
 //add new item controller
-appModule.controller('addCtrl',function($scope){
+appModule.controller('addCtrl',function($scope,todoArray){
 	//add item
 	$scope.todoAdd = function() {
-			i++;
-			list.push({todoText:$scope.todoInput, done:false, id:'list'+ i, idNo: i});
+			var id = todoArray.incrementId();
+			todoArray.addItem({todoText:$scope.todoInput, done:false, id:'list'+ id, idNo: id});
 			$scope.todoInput = "";
-			localStorage.setItem("todo_list", JSON.stringify(list)); //reset loacal storage
+
 	};
 });
 

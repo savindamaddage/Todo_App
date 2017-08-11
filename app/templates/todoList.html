@@ -17,32 +17,6 @@
         </div>
       </div>
     </div>
-    <div ng-repeat="x in todoList | filter : {done : filterTodo}">
-      <div class="list-group-item">
-        <div class="row row-nw">
-          <div class="col-md-1 col-sm-1 col-xs-2">
-            <div class="[ form-group ]">
-              <input type="checkbox" name="fancy-checkbox-default" id="{{ x.id }}" autocomplete="off" ng-model="x.done" ng-click="mark()"/>
-              <div class="[ btn-group ]">
-                <label for="{{ x.id }}" class="[ btn btn-default ] ">
-                  <span class="[ glyphicon glyphicon-ok ]"></span><span> </span>
-                </label>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-9 col-sm-9 col-xs-7">
-            <h4 ng-bind="x.todoText"></h4>
-          </div>
-          <div class="col-md-2 col-sm-2 col-xs-3">
-            <button type="button" class="btn btn-danger btn-xs right-align" ng-click="remove(x.id)">remove</button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div ng-if="todoList.length==0">
-      <div class="list-group-item">
-        <h4>Empty</h4>
-      </div>
-    </div>
+    <list-item-component></list-item-component>
   </div>
 </div>
