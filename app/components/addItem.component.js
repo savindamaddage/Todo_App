@@ -1,5 +1,6 @@
 //add new item controller
 appModule.controller('addCtrl',function($scope,todoArray){
+	$scope.todoInput = "";
 	//add item
 	$scope.todoAdd = function() {
 			var id = todoArray.incrementId();
