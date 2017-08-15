@@ -1,4 +1,5 @@
 appModule.controller('listItemCtrl', function($scope,todoArray){
+	$scope.$parent.todoList = todoArray.getList;
 	// remove item
 	$scope.remove = function(id){
 			var oldList = $scope.$parent.todoList;
