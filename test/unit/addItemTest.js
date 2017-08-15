@@ -25,7 +25,7 @@ describe('Unit testing -> ', function(){
       expect(scope.todoInput).toBe("");
       expect(mocklTodoArray.addItem).toHaveBeenCalled();
       expect(mocklTodoArray.incrementId).toHaveBeenCalled();
-      expect(mocklTodoArray.getList.length).toBe(0);
+      expect(mocklTodoArray.getList.length).toBe(1);
       //expect(mocklTodoArray.getId).toBeNull();
       // expect(_todoArray_.length).toBe(0);
       //expect(scope.todoAdd()).toHaveBeenCalledWith({todoText:"Complete unit testing before lunch", done:false, id:'list1', idNo: 1})

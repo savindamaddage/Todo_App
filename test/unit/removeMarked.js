@@ -19,8 +19,8 @@ describe('Unit testing -> ', function(){
       scope.todoList.push({todoText:"Test", done:true, id:'list6', idNo: 6});
       expect(scope.todoList.length).toBe(2);
       scope.removeMaked();
-      expect(scope.todoList.length).toBe(2);
-
+      expect(scope.todoList.length).toBe(1);
+      expect(mocklTodoArray.getList.length).toBe(1);
     });
   });
 });

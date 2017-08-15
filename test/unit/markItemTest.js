@@ -22,8 +22,7 @@ describe('Unit testing -> ', function(){
       $scope.$parent.todoList[0].done = true;
       $scope.mark();
 
-      //todo
-      //check loacal storage
+      expect(mocklTodoArray.getList.todoList[0].done).toBe(true);
 
     });
 

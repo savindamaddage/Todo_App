@@ -8,7 +8,6 @@ describe('Unit testing -> ', function(){
       $scope = $rootScope.$new();
       ctrl = $controller('listItemCtrl',{$scope: $scope, todoArray: todoArray});
       mocklTodoArray =  todoArray;
-
     }));
 
     it('Todo list should be defined -> ', function(){
@@ -21,7 +20,7 @@ describe('Unit testing -> ', function(){
       $scope.$parent.todoList.push({todoText:"Test", done:true, id:'list6', idNo: 8});
       expect($scope.$parent.todoList.length).toBe(2);
       $scope.remove(7);
-      expect($scope.$parent.todoList.length).toBe(2);
+      expect($scope.$parent.todoList.length).toBe(1);
     });
   });
 });
