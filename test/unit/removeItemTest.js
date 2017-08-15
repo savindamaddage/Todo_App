@@ -15,12 +15,13 @@ describe('Unit testing -> ', function(){
     });
 
     it('Item should be removed -> ', function(){
-      expect($scope.$parent.todoList.length).toBe(0);
+      expect($scope.$parent.todoList.length).toBe(1);
       $scope.$parent.todoList.push({todoText:"Test", done:false, id:'list5', idNo: 7});
       $scope.$parent.todoList.push({todoText:"Test", done:true, id:'list6', idNo: 8});
-      expect($scope.$parent.todoList.length).toBe(2);
+      expect($scope.$parent.todoList.length).toBe(3);
       $scope.remove(7);
-      expect($scope.$parent.todoList.length).toBe(1);
+      expect($scope.$parent.todoList.length).toBe(2);
+      //expect(mocklTodoArray.getList.length).toBe(1);
     });
   });
 });
